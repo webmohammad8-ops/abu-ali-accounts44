@@ -1,0 +1,108 @@
+:root{--navy:#1e3a5f;--bg:#f1f5f9;--line:#e2e8f0;--tx:#0f172a;--mut:#64748b;--pos:#15803d;--neg:#dc2626}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:'Tajawal',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-tap-highlight-color:transparent}
+button,input,select{font:inherit}
+h1,h2,p{margin:0}
+.pos{color:var(--pos)}.neg{color:var(--neg)}.b{font-weight:700}.grow{flex:1}
+
+/* layout */
+.shell{display:flex;height:100dvh}
+.side{width:20rem;flex:none;background:#fff;border-left:1px solid var(--line);display:flex;flex-direction:column}
+.main{flex:1;min-width:0;overflow:auto}
+.wrap{max-width:62rem;margin:0 auto;padding:16px;display:grid;gap:14px}
+.top{background:var(--navy);color:#fff;padding:14px 16px;padding-top:calc(14px + env(safe-area-inset-top,0px));display:flex;justify-content:space-between;align-items:center}
+.top b{display:block;font-size:1.15rem;font-weight:800}.top small{opacity:.7}
+.top button{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:6px 12px;cursor:pointer}
+.tools{padding:12px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.list{flex:1;overflow:auto;padding:12px;display:grid;gap:8px;align-content:start}
+.foot{border-top:1px solid var(--line);padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.empty{text-align:center;color:#94a3b8;padding:28px 0}
+.ph0{height:100%;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:1.1rem;padding:24px;text-align:center}
+
+/* controls */
+input,select{height:44px;width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:0 12px;background:#fff;color:var(--tx)}
+input:focus,select:focus{outline:2px solid rgba(30,58,95,.25);border-color:var(--navy)}
+label{display:grid;gap:4px;font-size:.9rem;font-weight:500;color:var(--mut)}
+.btn{height:44px;padding:0 16px;border-radius:8px;border:1px solid #cbd5e1;background:#fff;font-weight:700;cursor:pointer;color:#334155}
+.btn:hover{background:#f8fafc}
+.btn:disabled{opacity:.5}
+.primary{background:var(--navy);border-color:var(--navy);color:#fff}.primary:hover{background:#16304f}
+.danger{color:#b91c1c;border-color:#fecaca}
+.block{width:100%}
+.sm{height:40px;font-size:.9rem;padding:0 8px}
+.lnk{background:none;border:0;padding:6px;color:var(--navy);cursor:pointer;font-weight:700}.lnk.red{color:var(--neg)}
+
+/* workers list */
+.wcard{width:100%;text-align:right;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;display:grid;gap:4px}
+.wcard:hover{background:#f8fafc}.wcard.on{border-color:var(--navy);background:#f8fafc}
+.r1{display:flex;justify-content:space-between;gap:8px}
+.bal{font-weight:800;white-space:nowrap}
+.r2{color:var(--mut);font-size:.9rem}
+
+/* archive */
+.whead{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.whead h1{font-size:1.5rem;font-weight:800}.whead p{color:var(--mut)}
+.back{display:none}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+.card small{color:var(--mut);display:block}.card b{font-size:1.4rem;font-weight:800}
+.box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.ftitle{font-weight:800;margin-bottom:10px}
+.fgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.frow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:12px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px}
+.seg button{height:44px;border:0;border-radius:8px;background:transparent;font-weight:700;color:#475569;cursor:pointer}
+.seg button.on{background:var(--navy);color:#fff}
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
+table{width:100%;min-width:800px;border-collapse:collapse;text-align:right}
+th{background:#f1f5f9;color:#475569;padding:12px;font-weight:700}
+td{padding:10px 12px;border-top:1px solid var(--line)}
+tr.grp td{background:#e2e8f0;font-weight:800}
+.act{white-space:nowrap}
+.final{border-radius:16px;padding:22px;text-align:center;color:#fff;background:var(--pos)}
+.final.neg{background:#b91c1c;color:#fff}
+.final div{opacity:.9}.final b{font-size:2rem;font-weight:800}
+
+/* modal + login */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;padding:16px;z-index:10}
+.dlg{background:#fff;border-radius:16px;padding:20px;width:100%;max-width:26rem;display:grid;gap:12px}
+.dlg h2{font-size:1.25rem;font-weight:800}
+.loginbody{display:flex;align-items:center;justify-content:center;min-height:100dvh;padding:16px}
+.logincard{border:1px solid var(--line);box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ttl{text-align:center;font-size:1.6rem;font-weight:800;color:var(--navy)}
+.sub{text-align:center;color:var(--mut);margin-top:-8px}
+.err{color:var(--neg);font-weight:500;min-height:1.2em}
+
+/* mobile */
+@media (max-width:768px){
+  .side{width:100%;border:0}
+  .shell.detail .side{display:none}
+  .shell:not(.detail) .main{display:none}
+  .back{display:inline-flex;align-items:center}
+  .cards{grid-template-columns:1fr 1fr}
+  .fgrid{grid-template-columns:1fr 1fr}.fdate{grid-column:1/-1}
+  .wrap{padding:12px}
+}
+
+/* print = كشف حساب (فاتورة) */
+#print{display:none}
+@media print{
+  @page{size:A4;margin:12mm}
+  body{background:#fff}
+  #app,#modal{display:none!important}
+  #print{display:block;color:#000}
+  .ph{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #000;padding-bottom:10px}
+  .ptitle{font-size:1.6rem;font-weight:800}
+  .pinfo{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border:1px solid #64748b;padding:10px;margin:14px 0}
+  .ptable{min-width:0;font-size:.85rem}
+  .ptable th,.ptable td{border:1px solid #64748b;padding:4px 6px;background:none;color:#000}
+  .ptable th{background:#e2e8f0}
+  .ptable tr{break-inside:avoid}
+  .ptable .pg td{background:#f1f5f9;font-weight:700}
+  .ptable .ptot td{background:#e2e8f0;font-weight:800}
+  .pfinal{margin-top:18px;border:2px solid #000;padding:14px;text-align:center;break-inside:avoid}
+  .pfinal b{font-size:1.8rem;display:block}
+  .psig{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;text-align:center}
+  .psig div{border-top:1px solid #000;padding-top:6px}
+}
