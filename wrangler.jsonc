@@ -1,0 +1,12 @@
+
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "abu-ali-accounts44",
+  "main": "./_worker.js",
+  "compatibility_date": "2026-10-31",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  }
+}
